@@ -11,8 +11,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -20,8 +19,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: |
-          pip install selenium webdriver-manager requests
+        run: pip install selenium webdriver-manager requests
 
       - name: Run Crawler
         env:
@@ -34,5 +32,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add bingo_data.json
-          git commit -m "自動更新數據" || exit 0
+          git commit -m "update data" || exit 0
           git push
