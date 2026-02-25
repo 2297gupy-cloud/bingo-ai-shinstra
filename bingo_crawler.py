@@ -38,7 +38,7 @@ def run_crawler():
             all_history[date_key] = day_data
         with open('bingo_data.json', 'w', encoding='utf-8') as f:
             json.dump(all_history, f, ensure_ascii=False, indent=4)
-        send_tg(f"✅ <b>BINGO 雲端備份成功</b>\n📅 時間：{datetime.now().strftime('%Y-%m-%d %H:%M')}")
+        send_tg(f"✅ <b>BINGO 雲端 5 日備份完成</b>\n更新時間：{datetime.now().strftime('%Y-%m-%d %H:%M')}")
     finally: driver.quit()
 
 if __name__ == "__main__":
