@@ -1,4 +1,5 @@
 name: Bingo Daily Backup
+
 on:
   schedule:
     - cron: '0 16 * * *'
